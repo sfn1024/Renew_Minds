@@ -1,0 +1,32 @@
+/* ========================= IMPORT FONTS ========================= */
+@import url(../css/Clash-display.css);
+
+/* ========================= IMPORT HEADER ========================= */
+@import url(../css/Navbar.css);
+
+/* ========================= IMPORT NAVBAR ========================= */
+@import url(../css/Header.css);
+
+/* ========================= IMPORT Buttons ========================= */
+@import url(../css/Buttons.css);
+
+/* ========================= IMPORT Buttons ========================= */
+@import url(../css/Section_Title.css);
+
+/* ========================= IMPORT INDEX ========================= */
+@import url(../css/index.css);
+
+/* ========================= IMPORT ABOUT ========================= */
+@import url(../css/About.css);
+
+/* ========================= IMPORT PRODUCTS ========================= */
+@import url(../css/Products.css);
+
+/* ========================= IMPORT CONTACT ========================= */
+@import url(../css/Contact.css);
+
+/* ========================= IMPORT FOOTER ========================= */
+@import url(../css/Footer.css);
+
+/* ========================= IMPORT Admin ========================= */
+@import url(../css/Admin.css);

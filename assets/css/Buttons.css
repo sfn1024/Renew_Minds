@@ -1,0 +1,13 @@
+/* ========================= BUTTONS ========================= */
+.btn {
+    font-weight: 600;
+}
+
+.btn-brand {
+    color: black;
+}
+
+.btn-brand:hover {
+    background-color: var(--c-brand-light);
+    color: white;
+}
