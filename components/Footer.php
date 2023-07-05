@@ -1,8 +1,3 @@
-
-<?php
-    include('includes/connect.php');
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +14,9 @@
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 <link rel="stylesheet" href="assets/css/style.css">
+
 
 <!-- ========================= JS ========================= -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -31,7 +28,7 @@
     <!-- body content of your web page goes here -->
 
     <!-- Footer -->
-    <footer class="footer bg-light text-center text-lg-start">
+    <footer class="footer text-center text-lg-start">
         <div class="container p-3">
             <!-- Grid row -->
             <div class="row">
@@ -41,6 +38,14 @@
                     <p>
                         We provide innovative solutions to renew your mind and help you reach your full potential.
                     </p>
+
+                    <!-- Social media icons -->
+                    <div class="social-media">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
                 <!-- Grid column -->
 
@@ -65,7 +70,7 @@
             <!-- Grid row -->
         </div>
         <!-- Rights -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        <div class="text-center p-3 rights" style="background-color: rgba(0, 0, 0, 0.2);">
             © <?php echo date("Y"); ?> Renew Minds. All rights reserved.
         </div>
     </footer>
