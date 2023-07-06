@@ -1,13 +1,13 @@
-  body {
+body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
   }
 
   .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
+    max-width: 1500px;
+    padding: auto;
+   
   }
 
   .text-uppercase {
@@ -15,7 +15,7 @@
   }
 
   .footer {
-    background-color: #000;
+    background-color: #393ba0;
     color: #fff;
     padding: 40px 0;
     border-top: 1px solid #e7e7e7;
@@ -45,7 +45,6 @@
   }
 
   .footer .rights {
-    background-color: #333;
     color: #fff;
     padding: 10px 0;
     font-size: 14px;
@@ -72,4 +71,9 @@
 
   .footer .social-media a:hover {
     color: #007bff;
+  }
+
+  .main {
+    display: flex;
+    justify-content:space-evenly;
   }
