@@ -29,9 +29,9 @@
 
     <!-- Footer -->
     <footer class="footer text-center text-lg-start">
-        <div class="container p-3">
+        <div class="container">
             <!-- Grid row -->
-            <div class="row">
+            <div class="row main">
                 <!-- Grid column -->
                 <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
                     <h5 class="text-uppercase">Renew Minds</h5>
@@ -40,7 +40,7 @@
                     </p>
 
                     <!-- Social media icons -->
-                    <div class="social-media">
+                    <div class="social-media pt-5">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -51,17 +51,22 @@
 
                 <!-- Grid column -->
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Links</h5>
 
                     <ul class="list-unstyled mb-0">
                         <li>
-                            <a href="#!" class="text-dark">Link 1</a>
+                            <a href="#!" >Home</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-dark">Link 2</a>
+                            <a href="#!" >About</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-dark">Link 3</a>
+                            <a href="#!" >Blog</a>
+                        </li>
+                        <li>
+                            <a href="#!" >Appointment</a>
+                        </li>
+                        <li>
+                            <a href="#!" >Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -70,8 +75,8 @@
             <!-- Grid row -->
         </div>
         <!-- Rights -->
-        <div class="text-center p-3 rights" style="background-color: rgba(0, 0, 0, 0.2);">
-            © <?php echo date("Y"); ?> Renew Minds. All rights reserved.
+        <div class="text-center p-3 rights">
+            © 2023 Renew Minds. All rights reserved.
         </div>
     </footer>
 
