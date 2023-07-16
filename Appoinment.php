@@ -1,5 +1,7 @@
 <!--connect-->
-<?php include('includes/connect.php'); ?>
+<?php include('includes/connect.php'); 
+include('functions_home/common_functions_home.php');
+?>
 
 <!doctype html>
 <html lang="en">
@@ -83,11 +85,15 @@
                                                     <label class="form-label text-white" for="firstName">Enrollment Number</label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 mb-4">
-                                                <div class="form-outline">
-                                                    <input type="text" id="lastName" class="form-control form-control-md" />
-                                                    <label class="form-label text-white" for="lastName">Year</label>
-                                                </div>
+                                            <div class="col-md-6 mb-4 align-items-center">
+                                                <select class="select form-control form-control-md">
+                                                    <option value="1">--Select Year--</option>
+                                                    <option value="2">1st</option>
+                                                    <option value="3">2nd</option>
+                                                    <option value="4">3rd</option>
+                                                    <option value="5">4th</option>
+                                                </select>
+                                                <label class="form-label text-white" for="lastName">Acedamic Year</label>
                                             </div>
                                         </div>
 
@@ -141,19 +147,26 @@
 
                                         <div class="row">
                                             <div class="col-md-6 mb-4 align-items-center">
-                                                <select class="select form-control form-control-md">
-                                                    <option value="1">--Select Doctor--</option>
-                                                    <option value="2">Doctor1</option>
-                                                    <option value="3">Doctor2</option>
-                                                    <option value="4">Doctor3</option>
-                                                </select>
-                                                <label class="form-label text-white" for="lastName">Doctor</label>
-                                            </div>
-                                            <div class="col-md-6 mb-4 d-flex align-items-center">
-                                                <div class="form-outline datepicker w-100">
-                                                    <input type="text" class="form-control form-control-md" id="birthdayDate" />
-                                                    <label for="birthdayDate" class="form-label text-white">Reason</label>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-light dropdown-toggle mb-2 " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Select Mentor</button>
+                                                    <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton1">
+
+                                                        <!--mentors-->
+                                                        <?php
+                                                            getmentors();
+                                                        ?>
+                                                    </ul>
                                                 </div>
+                                                <label class="form-label text-white" for="lastName">Mentor</label>
+                                            </div>
+                                            <div class="col-md-6 mb-4 align-items-center">
+                                                <select class="select form-control form-control-md">
+                                                    <option value="1">--Select Level--</option>
+                                                    <option value="2">Urgent</option>
+                                                    <option value="3">Can Wait</option>
+                                                    <option value="4">Not Emergency</option>
+                                                </select>
+                                                <label class="form-label text-white" for="lastName">Emergency Level</label>
                                             </div>
                                         </div>
                                         <div class="row mt-4 pt-2">
