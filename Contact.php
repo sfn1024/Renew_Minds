@@ -81,7 +81,7 @@ echo "<script>alert('Data not inserted');</script>";
 /*fade image*/
         .fade-in-image {
             position: relative;
-            animation: fadeIn 5s ease-in-out forwards;
+            animation: fadeIn 3s ease-in-out forwards;
         }
         
         @keyframes fadeIn {
