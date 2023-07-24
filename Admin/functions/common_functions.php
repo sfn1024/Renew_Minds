@@ -2,4 +2,3 @@
 //include connect
 include('../includes/connect.php');
 
-?>

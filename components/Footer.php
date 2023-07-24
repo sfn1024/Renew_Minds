@@ -9,7 +9,8 @@
     }
 
     footer {
-        background-color: #3586ff;
+        position: fixed;
+        background-color: #0a4275;
         bottom: 0;
         width: 100%;
     }
@@ -20,7 +21,7 @@
 
 <section class="">
 
-    <footer class="text-white" style="background-color: #0a4275;">
+    <footer class="text-white">
     <!-- 
         <div class="container p-2">
             <section class="footer-links">
