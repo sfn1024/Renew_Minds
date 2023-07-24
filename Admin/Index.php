@@ -20,36 +20,51 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="assets\css\style.css">
-    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css">
+
+    <script defer src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script defer src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+    <script defer src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
+    <script defer src="table.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 
 
 
-    <style>
+    <style>    
         body{
             overflow-x: hidden;
         }
         
+        .nav-cont{
+            padding: 0;
+            margin: auto 0px auto 60px;
+        }
         .admin-logo{
+            margin-left: 0px;
             width: 20%;
             height: auto%;
         }
 
-        .navbar{
+        .bg-clr{
             background-color: #0a4275;
         }
 
         footer {
-            background-color: #0a4275;
             bottom: 0;
             width: 100%;
-        }
 
-        .product_image{
-            width: 100px;
-            object-fit: contain;
+        }
+        
+        .nav{
+            background-color: #cecece;
+        }
+        
+        .dropdown-item{
+            color: white;
         }
     </style>
 
@@ -57,29 +72,32 @@
 <body>
     <!-- ========================= NAVBAR ========================= -->
 
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container d-flex">
+    <nav class="navbar bg-clr navbar-expand-lg sticky-top">
+        <div class="container nav-cont d-flex">
             <img src="../assets/media/logo.png" class="admin-logo d-flex justify-content-start" alt="logo">
             <h3 class="text-center text-light mx-auto">Admin Dashboard</h3>
             <div class="d-flex justify-content-start"><i class="fa-solid fa-right-from-bracket text-light"></i></div>
         </div>
     </nav>
-    
     <div class="row ">
-        <div class="col-md-12 p-3 bg-secondary p-1 d-flex align-items-center">
+        <div class="nav col-md-12 p-3 d-flex align-items-center">
             <div class="button text-center m-auto">
-                <button><a href="../Admin/Insert_Product.php" class="nav-link text-light bg-dark my-1 p-1">View Mentors</a></button>
-                <button><a href="index.php?insert_mentor" class="nav-link text-light bg-dark my-1 p-1">Insert Mentor</a></button>
-                <button><a href="index.php?insert_category" class="nav-link text-light bg-dark my-1 p-1">Insert Category</a></button>
-                <button><a href="index.php?view_category" class="nav-link text-light bg-dark my-1 p-1">View Category</a></button>
-                <button><a href="index.php?insert_brand" class="nav-link text-light bg-dark my-1 p-1">Insert Brand</a></button>
-                <button><a href="index.php?view_brand" class="nav-link text-light bg-dark my-1 p-1">View Brand</a></button>
-                <button><a href="" class="nav-link text-light bg-dark my-1 p-1">Logout</a></button>
-<!--            
-                <button><a href="" class="nav-link text-light bg-dark my-1 p-1">All Orders</a></button>
-                <button><a href="" class="nav-link text-light bg-dark my-1 p-1">All Payments</a></button>
-                <button><a href="" class="nav-link text-light bg-dark my-1 p-1">List Users</a></button>
--->
+                <button class="btn btn-success bg-clr"><a href="index.php" class="nav-link text-light my-1 p-1"><i class="fa-solid fa-home text-light"></i></a></button>
+                <button class="btn btn-dark bg-clr">
+                    <a class="nav-link text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Appointment
+                    </a>
+                    <ul class="dropdown-menu bg-clr">
+                        <li><a class="dropdown-item" href="#">View Appointments</a></li>
+                        <li><a class="dropdown-item" href="index.php?manage_mentor">Manage Mentors</a></li>
+                        <li><a class="dropdown-item" href="index.php?insert_mentor">Insert Mentors</a></li>
+                        <li><a class="dropdown-item" href="index.php?manage_degree">Manage Degrees</a></li>
+                        <li><a class="dropdown-item" href="index.php?insert_degree">Insert Degrees</a></li>
+                    </ul>
+                </button>
+                <button class="btn btn-dark bg-clr"><a href="index.php" class="nav-link text-light my-1 p-1">Blogs</a></button>
+                <button class="btn btn-dark bg-clr"><a href="index.php" class="nav-link text-light my-1 p-1">Contact</a></button>
+                <button class="btn btn-dark bg-clr"><a href="index.php" class="nav-link text-light my-1 p-1">Accounts</a></button>
             </div>
         </div>
     </div>
@@ -90,13 +108,33 @@
             If(isset($_GET['insert_mentor'])){
                 include('insert_mentor.php');
             }
+
+            If(isset($_GET['insert_degree'])){
+                include('insert_degree.php');
+            }
+
+            If(isset($_GET['manage_mentor'])){
+                include('manage_mentor.php');
+            }
+
+            If(isset($_GET['manage_degree'])){
+                include('manage_degree.php');
+            }
+
+            If(isset($_GET['edit_mentor'])){
+                include('edit_mentor.php');
+            }
+
+            If(isset($_GET['edit_degree'])){
+                include('edit_degree.php');
+            }
         ?>
     </div>
     
 
     <!-- ========================= FOOTER ========================= -->
 
-    <footer class="text-white">
+    <footer class="text-white bg-clr">
         <div class="text-center p-3">
             © 2023 Copyright:
             <a class="text-white" href="#">Renew Minds</a>

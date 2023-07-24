@@ -1,6 +1,6 @@
 <?php
 //include connect
-include('../includes/connect.php');
+include('includes/connect.php');
 ?>
 
 
@@ -16,7 +16,7 @@ function getmentors() {
         $mentor_id= $row_data['mentor_id'];
         echo
         "<li class='nav-item'>
-            <a href='Appointment.php?mentors=$mentor_id' class='nav-links text-dark fw-semibold'><p>$mentor_name</p></a>
+            <a href='Appointment.php?mentors=$mentor_id' class='nav-links'><p>$mentor_name</p></a>
         </li>";
     }
 }

@@ -1,6 +1,6 @@
 <!--connect-->
-<?php include('includes/connect.php'); 
-include('functions_home/common_functions_home.php');
+<?php 
+    include('includes/connect.php'); 
 ?>
 
 <!doctype html>
@@ -28,6 +28,11 @@ include('functions_home/common_functions_home.php');
         }
         .app-form-card{
             background-color: #0a4275;
+            border-radius: 15px;
+        }
+
+        .submitBtn{
+            margin-right: 20px;
         }
     </style>
 
@@ -50,143 +55,180 @@ include('functions_home/common_functions_home.php');
         <div class="row mt-3"></div>
     </section>
     
-    <!-- Modal -->
+    <!-- Form Popup -->
     <div class="modal fade modal-bottom-right" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <section class="gradient-custom">
-                            <div class="app-form-card shadow-2-strong card-registration" style="border-radius: 15px;">
-                                <div class="modal-header">
-                                    <h2 class="for-title text-white">Registration Form</h2>
-                                    <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-body">
+            <section class="gradient-custom">
+            <div class="app-form-card">
+                    <div class="modal-header">
+                        <h2 class="for-title text-white">Registration Form</h2>
+                        <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="card-body p-4 p-md-5">
+
+    <!-- ========================= FORM ========================= -->
+                        <form onsubmit="return validate()">
+
+                            <div class="row 1">
+                                <div class="col-md-6 mb-4">
+
+                                    <!--Name-->
+                                    <div class="form-outline text-dark">
+                                        <label class="form-label text-white" for="name">Name</label>
+                                        <label id="lsluser" style="color:red; visibility: hidden;">Invalid</label>
+                                        <input type="text" name="name" id="Name" class="form-control" placeholder="Ex: Kumar" autocomplete="off">
+                                    </div>
                                 </div>
-                                <div class="card-body p-4 p-md-5">
-                                    <form>
-                                        <div class="row">
-                                            <div class="col-md-6 mb-4">
-                                                <div class="form-outline text-dark">
-                                                    <input type="text" id="firstName" class="form-control form-control-md" />
-                                                    <label class="form-label text-white" for="firstName" placeholder="lional" required>First Name</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 mb-4">
-                                                <div class="form-outline">
-                                                    <input type="text" id="lastName" class="form-control form-control-md" />
-                                                    <label class="form-label text-white" for="lastName">Last Name</label>
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                        <div class="row">
-                                            <div class="col-md-6 mb-4">
-                                                <div class="form-outline">
-                                                    <input type="text" id="firstName" class="form-control form-control-md" />
-                                                    <label class="form-label text-white" for="firstName">Enrollment Number</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 mb-4 align-items-center">
-                                                <select class="select form-control form-control-md">
-                                                    <option value="1">--Select Year--</option>
-                                                    <option value="2">1st</option>
-                                                    <option value="3">2nd</option>
-                                                    <option value="4">3rd</option>
-                                                    <option value="5">4th</option>
-                                                </select>
-                                                <label class="form-label text-white" for="lastName">Acedamic Year</label>
-                                            </div>
-                                        </div>
+                                <div class="col-md-6 mb-4 align-items-center">
 
-                                        <div class="row">
-                                            <div class="col-md-6 mb-4 pb-2">
-                                                <div class="form-outline">
-                                                    <input type="email" id="emailAddress" class="form-control form-control-md" />
-                                                    <label class="form-label text-white" for="emailAddress">Email</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 mb-4 pb-2">
-                                                <div class="form-outline">
-                                                    <input type="tel" id="phoneNumber" class="form-control form-control-md" />
-                                                    <label class="form-label text-white" for="phoneNumber">Phone Number</label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-md-6 mb-4 d-flex align-items-center">
-                                                <div class="form-outline datepicker w-100">
-                                                    <input type="text" class="form-control form-control-md" id="birthdayDate" />
-                                                    <label for="birthdayDate" class="form-label text-white">Age</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 mb-4 align-items-center">
-                                                <select class="select form-control form-control-md">
-                                                    <option value="1">--Select Gender--</option>
-                                                    <option value="2">Male</option>
-                                                    <option value="3">Female</option>
-                                                    <option value="4">Others</option>
-                                                </select>
-                                                <label class="form-label text-white" for="lastName">Gender</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-md-6 mb-4 d-flex align-items-center">
-                                                <div class="form-outline datepicker w-100">
-                                                    <input type="text" class="form-control form-control-md" id="birthdayDate" />
-                                                    <label for="birthdayDate" class="form-label text-white">Date</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 mb-4 d-flex align-items-center">
-                                                <div class="form-outline datepicker w-100">
-                                                    <input type="text" class="form-control form-control-md" id="birthdayDate" />
-                                                    <label for="birthdayDate" class="form-label text-white">Time</label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-md-6 mb-4 align-items-center">
-                                                <div class="dropdown">
-                                                    <button class="btn btn-light dropdown-toggle mb-2 " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Select Mentor</button>
-                                                    <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton1">
-
-                                                        <!--mentors-->
-                                                        <?php
-                                                            getmentors();
-                                                        ?>
-                                                    </ul>
-                                                </div>
-                                                <label class="form-label text-white" for="lastName">Mentor</label>
-                                            </div>
-                                            <div class="col-md-6 mb-4 align-items-center">
-                                                <select class="select form-control form-control-md">
-                                                    <option value="1">--Select Level--</option>
-                                                    <option value="2">Urgent</option>
-                                                    <option value="3">Can Wait</option>
-                                                    <option value="4">Not Emergency</option>
-                                                </select>
-                                                <label class="form-label text-white" for="lastName">Emergency Level</label>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-4 pt-2">
-                                            <div class="col-md-1"></div>
-                                            <input class="col-md-4 btn btn-danger btn-lg" type="reset" value="Reset" />
-                                            <div class="col-md-2"></div>
-                                            <input class="col-md-4 btn btn-primary btn-lg" type="submit" value="Submit" />
-                                        </div>
-                                    </form>
+                                    <!--Degree-->
+                                    <label class="form-label text-white" for="Degree">Degree</label>
+                                    <select name="select_degree" id="Degree" class="form-select mb-2 text-dark">
+                                        <option value="">Select a Degree</option>
+                                        <?php
+                                            $select_query= "select * from degrees";
+                                            $result_query= mysqli_query($con, $select_query);
+                                            while($row= mysqli_fetch_assoc($result_query)){
+                                                $degree_name= $row['degree_name'];
+                                                $degree_id= $row['degree_id'];
+                                                echo "<option value='$degree_id'>$degree_name</option>" ;
+                                            }
+                                        ?>
+                                        <!-- <option value="">Mentor 1</option> -->
+                                    </select>
                                 </div>
                             </div>
-                        </section>
-                    </div>              
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+
+                                    <!--Enrollment Number-->
+                                    <div class="form-outline">
+                                        <label class="form-label text-white" for="enrollNumber">Enrollment Number</label>
+                                        <input type="text" name="enroll_number" id="enrollNumber" class="form-control" placeholder="Ex: ICT/20/008" autocomplete="off" >
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-4 align-items-center">
+
+                                    <!--Acedamic Year-->
+                                    <label class="form-label text-white" for="AcedamicYear">Acedamic Year</label>
+                                    <select name="select_year" id="AcedamicYear" class="form-select mb-2 text-dark">
+                                        <option value="1">Select the Year</option>
+                                        <option value="2">1st</option>
+                                        <option value="3">2nd</option>
+                                        <option value="4">3rd</option>
+                                        <option value="5">4th</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <!--Email-->
+                                    <div class="form-outline">
+                                        <label class="form-label text-white" for="emailAddress">Email</label>
+                                        <input type="" name="email_address" id="emailAddress" class="form-control" placeholder="Ex: __@std.uwu.ac.lk" autocomplete="off" >
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-4">
+                                    <!--Contact Number-->
+                                    <div class="form-outline">
+                                        <label class="form-label text-white" for="contactNumber">Contact Number</label>
+                                        <input type="text" name="contact_number" id="contactNumber" class="form-control" placeholder="Ex: 772587387" autocomplete="off" >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <!--Age-->
+                                    <div class="form-outline">
+                                        <label class="form-label text-white" for="Age">Age</label>
+                                        <input type="text" name="age" id="Age" class="form-control" placeholder="Ex: 23" autocomplete="off" >
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4 align-items-center">
+                                    <!--Gender-->
+                                    <label class="form-label text-white" for="Gender">Gender</label>
+                                    <select name="select_gender" id="Gender" class="form-select mb-2 text-dark">
+                                        <option value="1">Select Gender</option>
+                                        <option value="2">Male</option>
+                                        <option value="3">Female</option>
+                                        <option value="4">Others</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <!--Date-->
+                                    <div class="form-outline">
+                                        <label class="form-label text-white" for="date">Date</label>
+                                        <input type="date" name="date" id="date" class="form-control" autocomplete="off" >
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <!--Time-->
+                                    <div class="form-outline">
+                                        <label class="form-label text-white" for="time">Time</label>
+                                        <input type="time" name="time" id="time" class="form-control" autocomplete="off" >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4 align-items-center">
+                                    <!--Mentor-->
+                                    <label class="form-label text-white" for="Mentor">Mentor</label>
+                                    <select name="select_mentors" id="Mentor" class="form-select mb-2 text-dark">
+                                        <option value="">Select a Mentor</option>
+                                        <?php
+                                            $select_query= "select * from mentors";
+                                            $result_query= mysqli_query($con, $select_query);
+                                            while($row= mysqli_fetch_assoc($result_query)){
+                                                $mentor_name= $row['mentor_name'];
+                                                $mentor_id= $row['mentor_id'];
+                                                echo "<option value='$mentor_id'>$mentor_name</option>" ;
+                                            }
+                                        ?>
+                                        <!-- <option value="">Mentor 1</option> -->
+                                    </select>
+                                </div>
+                                                                        
+                                <div class="col-md-6 mb-4 align-items-center">
+                                <!--Language-->
+                                <label class="form-label text-white" for="EmergencyLanguage">Preffered Language</label>
+                                <select name="select_language" id="Language" class="form-select mb-2 text-dark">
+                                    <option value="1">Select a Language</option>
+                                    <option value="2">English</option>
+                                    <option value="3">Sinhala</option>
+                                    <option value="4">Tamil</option>
+                                </select>
+                            </div>
+                                                                    
+                            <!--Reset and Submit-->
+                            <div class="form-outline mt-4 pt-2">
+                                <input class="btn btn-primary px-3 submitBtn" type="submit" name="save_appointment" value="Save Appointment">
+                                <input class="btn btn-danger px-3" type="reset" name="reset" value="Reset">
+                            </div>
+                        </form>      
+                    </div>
                 </div>
-            </div>
+            </section>
+        </div>              
         </div>
+        </div>
+    </div>
     <!-- ========================= FOOTER ========================= -->
     <?php include('components/Footer.php'); ?>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/form_validation.js"></script>
 
 </body>
 </html>

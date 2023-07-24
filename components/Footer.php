@@ -9,6 +9,7 @@
     }
 
     footer {
+        position: fixed;
         background-color: #0a4275;
         bottom: 0;
         width: 100%;
