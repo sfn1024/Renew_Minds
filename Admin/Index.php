@@ -88,7 +88,7 @@
                         Appointment
                     </a>
                     <ul class="dropdown-menu bg-clr">
-                        <li><a class="dropdown-item" href="#">View Appointments</a></li>
+                        <li><a class="dropdown-item" href="index.php?view_appointments">View Appointments</a></li>
                         <li><a class="dropdown-item" href="index.php?manage_mentor">Manage Mentors</a></li>
                         <li><a class="dropdown-item" href="index.php?insert_mentor">Insert Mentors</a></li>
                         <li><a class="dropdown-item" href="index.php?manage_degree">Manage Degrees</a></li>
@@ -121,6 +121,10 @@
                 include('manage_degree.php');
             }
 
+            If(isset($_GET['view_appointments'])){
+                include('view_appointments.php');
+            }
+
             If(isset($_GET['edit_mentor'])){
                 include('edit_mentor.php');
             }
@@ -145,44 +149,3 @@
     
 </body>
 </html>
-
-<!--
-GET pages to Admin index
-    <div class="container my-3">
-
-                If(isset($_GET['insert_category'])){
-                    include('Insert_Category.php');
-                }
-                If(isset($_GET['view_category'])){
-                    include('View_Category.php');
-                }
-                If(isset($_GET['edit_category'])){
-                    include('Edit_Category.php');
-                }
-                If(isset($_GET['delete_category'])){
-                    include('Delete_Category.php');
-                }
-                If(isset($_GET['insert_brand'])){
-                    include('Insert_Brand.php');
-                }
-                If(isset($_GET['view_brand'])){
-                    include('View_Brand.php');
-                }
-                If(isset($_GET['edit_brand'])){
-                    include('Edit_Brand.php');
-                }
-                If(isset($_GET['delete_brand'])){
-                    include('Delete_Brand.php');
-                }
-                If(isset($_GET['view_products'])){
-                    include('View_Products.php');
-                }
-                If(isset($_GET['edit_products'])){
-                    include('Edit_Products.php');
-                }
-                If(isset($_GET['delete_products'])){
-                    include('Delete_Product.php');
-                }
-            ?>
-        </div>
--->

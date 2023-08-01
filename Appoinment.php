@@ -1,6 +1,43 @@
 <!--connect-->
 <?php 
     include('includes/connect.php'); 
+
+    if(isset($_POST['insert_details'])){
+
+        $std_name= $_POST['name'];
+        $std_reg_number= $_POST['reg_number'];
+        $std_email= $_POST['email'];
+        $std_contact= $_POST['contact'];
+        $std_degree= $_POST['Degree'];
+        $std_acedamic_year= $_POST['AcedamicYear'];
+        $std_age= $_POST['age'];
+        $std_gender= $_POST['gender'];
+        $std_mentor= $_POST['mentor'];
+        $std_language= $_POST['language'];
+        $std_datepicker= $_POST['datepicker'];
+        $std_timepicker= $_POST['timepicker'];
+
+
+        //checking whether feilds are empty
+        if ($std_name== "" or $std_reg_number== "" or $std_email== "" or $std_contact== "" or 
+            $std_degree== "" or $std_acedamic_year== "" or $std_age== "" or $std_gender== "" or 
+            $std_mentor== "" or $std_language== "" or $std_datepicker== "" or $std_timepicker== "" )
+        {
+            echo "<script>alert('Fill All the Fields')</script>";
+        }else{
+
+            //insert details
+            $insert_details=  "insert into `appointments` (std_name, std_reg_number, std_email, std_contact, degree_id, std_acedamic_year, std_age, 
+            std_gender, mentor_id, std_language, std_datepicker, std_timepicker, date)
+            values ('$std_name', '$std_reg_number', '$std_email', '$std_contact', '$std_degree', 
+            '$std_acedamic_year', '$std_age', '$std_gender', '$std_mentor', '$std_language', '$std_datepicker', '$std_timepicker', NOW())";
+            $result_query= mysqli_query($con, $insert_details);
+            if($result_query){
+                echo "<script>alert('Details Entered Succesfully')</script>";
+                echo "<script>window.open('submitted.php','_self')</script>";
+            }
+        }
+    }
 ?>
 
 <!doctype html>
@@ -69,7 +106,7 @@
                     <div class="card-body p-4 p-md-5">
 
     <!-- ========================= FORM ========================= -->
-    <form>
+    <form action="" method="post">
         <!-- name and registeration no. -->
         <div class="row mb-4">
             <div class="col">
@@ -82,7 +119,7 @@
             <div class="col">
             <div class="form-outline">
                 <label class="form-label text-white" for="reg_number">Reg Number</label>
-                <input type="text" name="reg_number" id="reg_number" class="form-control" placeholder="ICT/20/008" autocomplete="off"/>
+                <input type="text" name="reg_number" id="reg_number" class="form-control" maxlength="10" placeholder="ICT/20/008" autocomplete="off"/>
             </div>
             </div>
         </div>
@@ -99,7 +136,7 @@
             <div class="col">
                 <div class="form-outline mb-4">
                     <label class="form-label text-white" for="contact">Contact</label>
-                    <input type="number" name="contact" id="contact" class="form-control" placeholder="0772587387" autocomplete="off"/>
+                    <input type="text" name="contact" id="contact" class="form-control" maxlength="10" placeholder="0772587387" autocomplete="off"/>
                 </div>
             </div>
         </div>
@@ -109,15 +146,15 @@
             <div class="col">
             <div class="form-outline">
                 <label class="form-label text-white" for="degree">Degree</label>
-                <select name="degree" id="Degree" class="form-select">
-                    <option value="">Select a Degree</option>
+                <select name="Degree" id="Degree" class="form-select">
+                    <option value="null">Select a Degree</option>
                     <?php
                         $select_query= "select * from degrees";
                         $result_query= mysqli_query($con, $select_query);
                         while($row= mysqli_fetch_assoc($result_query)){
                             $degree_name= $row['degree_name'];
                             $degree_id= $row['degree_id'];
-                            echo "<option value='$degree_id'>$degree_name</option>" ;
+                            echo "<option value='$degree_name'>$degree_name</option>" ;
                         }
                     ?>
                     <!-- <option value="">Mentor 1</option> -->
@@ -128,12 +165,12 @@
             <div class="col">
             <div class="form-outline">
                 <label class="form-label text-white" for="year">Academic Year</label>
-                <select name="select_year" id="AcedamicYear" class="form-select mb-2 text-dark">
-                    <option value="1">Select the Year</option>
-                    <option value="2">1st</option>
-                    <option value="3">2nd</option>
-                    <option value="4">3rd</option>
-                    <option value="5">4th</option>
+                <select name="AcedamicYear" id="AcedamicYear" class="form-select mb-2 text-dark">
+                    <option value="null">Select the Year</option>
+                    <option value="1st">1st</option>
+                    <option value="2nd">2nd</option>
+                    <option value="3rd">3rd</option>
+                    <option value="4th">4th</option>
                 </select>
             </div>
             </div>
@@ -145,14 +182,14 @@
             <div class="form-outline">
                 <label class="form-label text-white" for="age">Age</label>
                 <select name="age" name="age" id="age" class="form-select mb-2 text-dark">
-                    <option value="1">Select Your Age</option>
-                    <option value="2">below 21</option>
-                    <option value="3">21</option>
-                    <option value="4">22</option>
-                    <option value="5">23</option>
-                    <option value="6">24</option>
-                    <option value="7">25</option>
-                    <option value="8">Above 25</option>
+                    <option value="null">Select Your Age</option>
+                    <option value="below 21">below 21</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="Above 25">Above 25</option>
                 </select>
             </div>
             </div>
@@ -161,10 +198,10 @@
             <div class="form-outline">
                 <label class="form-label text-white" for="gender">Gender</label>
                 <select name="gender" name="gender" id="gender" class="form-select mb-2 text-dark">
-                    <option value="1">Select Gender</option>
-                    <option value="2">Male</option>
-                    <option value="3">Female</option>
-                    <option value="4">Other</option>
+                    <option value="null">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
                 </select>
             </div>
             </div>
@@ -176,14 +213,14 @@
             <div class="form-outline">
             <label class="form-label text-white" for="mentor">Mentor</label>
                 <select name="mentor" id="mentor" class="form-select mb-2 text-dark">
-                    <option value="">Select a Mentor</option>
+                    <option value="null">Select a Mentor</option>
                     <?php
                         $select_query= "select * from mentors";
                         $result_query= mysqli_query($con, $select_query);
                         while($row= mysqli_fetch_assoc($result_query)){
                             $mentor_name= $row['mentor_name'];
                             $mentor_id= $row['mentor_id'];
-                            echo "<option value='$mentor_id'>$mentor_name</option>";
+                            echo "<option value='$mentor_name'>$mentor_name</option>";
                         }
                     ?>
                     <!-- <option value="">Mentor 1</option> -->
@@ -194,11 +231,11 @@
             <div class="form-outline">
                 <label class="form-label text-white" for="language">Language</label>
                 <select name="language" name="language" id="language" class="form-select mb-2 text-dark">
-                    <option value="1">Select Language</option>
-                    <option value="2">English</option>
-                    <option value="3">Sinhala</option>
-                    <option value="4">Tamil</option>
-                    <option value="5">Other</option>
+                    <option value="null">Select Language</option>
+                    <option value="English">English</option>
+                    <option value="Sinhala">Sinhala</option>
+                    <option value="Tamil">Tamil</option>
+                    <option value="Other">Other</option>
                 </select>
             </div>
             </div>
@@ -209,21 +246,21 @@
         <div class="col">
             <div class="form-outline">
                 <label class="form-label text-white" for="date">Date</label>
-                <input type="date" name="date" id="date" class="form-control" autocomplete="off"/>
+                <input type="date" name="datepicker" id="datepicker" class="form-control">
             </div>
         </div>
 
         <div class="col">
             <div class="form-outline">
                 <label class="form-label text-white" for="time">Time</label>
-                <input type="time" name="time" id="time" class="form-control" autocomplete="off"/>
+                <input type="time" name="timepicker" id="timepicker" class="form-control">
             </div>
         </div>
         </div>
 
         <!-- Submit button -->
         <button type="reset" class="btn btn-danger btn-block mx-3">Reset</button>
-        <button type="submit" class="btn btn-primary btn-block mx-3">Place order</button>
+        <button type="submit" name="insert_details" class="btn btn-primary btn-block mx-3">Place order</button>
     </form>     
                     </div>
                 </div>
@@ -235,9 +272,30 @@
     <!-- ========================= FOOTER ========================= -->
     <?php include('components/Footer.php'); ?>
 
+    <!-- ========================= DISABLE PAST DATE  ========================= -->
+
+    <script>
+        // Get the current date as a string in "YYYY-MM-DD" format
+        function getCurrentDate() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = (now.getMonth() + 2).toString().padStart(2, '0');
+            const day = now.getDate().toString().padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        }
+
+        // Set the minimum date for the datepicker
+        function setMinDate() {
+            const datepicker = document.getElementById('datepicker');
+            datepicker.min = getCurrentDate();
+        }
+
+        // Call setMinDate to initialize the minimum date
+        setMinDate();
+    </script>
+
+
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/form_validation.js"></script>
 
 </body>
 </html>
-
