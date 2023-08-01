@@ -1,4 +1,7 @@
-<?php   include('includes/connect.php');
+<?php   include('connect.php');
+
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
 
     $numofdays = date("t"); //numbers of days in the current month
     $first = date("Y-m") ."-". "1"; //get the current year and month, join it with first day of the month
@@ -8,20 +11,31 @@
     $dayscounter = 0;
     $numofdays = $numofdays + $firstday;
 
-    $query = $db->prepare("SELECT COUNT(*) as count FROM mentors");
-    $query->execute();
-    $mentorCount = $query->fetchColumn();
+    // Query to count mentors
+    $mentorCount = 0;
+    $mentorQuery = mysqli_query($con, "SELECT COUNT(*) as count FROM mentors");
+    if ($mentorQuery) {
+        $mentorRow = mysqli_fetch_assoc($mentorQuery);
+        $mentorCount = $mentorRow['count'];
+    }
 
     // Query to count patients
-    $query = $db->prepare("SELECT COUNT(*) as count FROM appointments");
-    $query->execute();
-    $patientCount = $query->fetchColumn();
+    $patientCount = 0;
+    $patientQuery = mysqli_query($con, "SELECT COUNT(*) as count FROM appointments");
+    if ($patientQuery) {
+        $patientRow = mysqli_fetch_assoc($patientQuery);
+        $patientCount = $patientRow['count'];
+    }
 
     // Query to count appointments
-    $query = $db->prepare("SELECT COUNT(*) as count FROM appointments");
-    $query->execute();
-    $appointmentCount = $query->fetchColumn();
-?>
+    $appointmentCount = 0;
+    $appointmentQuery = mysqli_query($con, "SELECT COUNT(*) as count FROM appointments");
+    if ($appointmentQuery) {
+        $appointmentRow = mysqli_fetch_assoc($appointmentQuery);
+        $appointmentCount = $appointmentRow['count'];
+    }
+  
+    ?>
 
 <!doctype html>
 <html lang="en">
