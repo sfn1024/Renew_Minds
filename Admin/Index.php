@@ -8,8 +8,6 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin Dashboard</title>
     <link rel="shortcut icon" href="../assets/images/SJ-logo-white.png" type="image/x-icon">
 
@@ -82,7 +80,7 @@
     <div class="row ">
         <div class="nav col-md-12 p-3 d-flex align-items-center">
             <div class="button text-center m-auto">
-                <button class="btn btn-success bg-clr"><a href="index.php" class="nav-link text-light my-1 p-1"><i class="fa-solid fa-home text-light"></i></a></button>
+                <button class="btn btn-success bg-clr"><a href="index.php?dashboard" class="nav-link text-light my-1 p-1"><i class="fa-solid fa-home text-light"></i></a></button>
                 <button class="btn btn-dark bg-clr">
                     <a class="nav-link text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Appointment
@@ -96,7 +94,7 @@
                     </ul>
                 </button>
                 <button class="btn btn-dark bg-clr"><a href="index.php" class="nav-link text-light my-1 p-1">Blogs</a></button>
-                <button class="btn btn-dark bg-clr"><a href="index.php" class="nav-link text-light my-1 p-1">Contact</a></button>
+                <button class="btn btn-dark bg-clr"><a href="index.php?view_contact" class="nav-link text-light my-1 p-1">Contact</a></button>
                 <button class="btn btn-dark bg-clr"><a href="index.php" class="nav-link text-light my-1 p-1">Accounts</a></button>
             </div>
         </div>
@@ -105,6 +103,10 @@
     <!--GET pages to Admin index-->
     <div class="container my-3">
         <?php
+            If(isset($_GET['dashboard'])){
+                include('dashboard.php');
+            }
+
             If(isset($_GET['insert_mentor'])){
                 include('insert_mentor.php');
             }
@@ -123,6 +125,10 @@
 
             If(isset($_GET['view_appointments'])){
                 include('view_appointments.php');
+            }
+
+            If(isset($_GET['view_contact'])){
+                include('view_contact.php');
             }
 
             If(isset($_GET['edit_mentor'])){

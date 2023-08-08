@@ -32,7 +32,7 @@
 
 <!-- ========================= NAVBAR ========================= -->
 
-<nav class="navbar navbar-expand-lg shadow-lg">
+<nav class="navbar home-navbar navbar-expand-lg shadow-lg">
     <div class="container-fluid">
 
         <a class="navbar-brand" href="index.php">
