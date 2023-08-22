@@ -43,7 +43,7 @@ We encourage you to explore our website to learn more about the services we offe
         <div class="row">
           <div class="col-lg-9 col-xl-5 align-items-stretch py-1 px-md-1">
             <div class="image">
-              <img src="img/about_pic.png" alt="">
+              <img src="assets\media\about_pic.png" alt="">
             </div>
           </div>
           <div class="col-lg-1 col-xl-1"></div>
@@ -51,19 +51,19 @@ We encourage you to explore our website to learn more about the services we offe
           justify-content-center pyfa-stack-2 px-lg-5">
             <div class="services">
               <div class="icon-box">
-                <div class="icon"><i class="bx bx-heart"></i></div>
+                <div class="icon"><i class="fa-solid fa-heart-pulse"></i></div>
                 <h4 class="title"> MENTAL WELL-BEING</a></h4>
                 <p class="description">Being able to be your true self is one of the strongest components of good mental health</p>
               </div>
     
               <div class="icon-box">
-                <div class="icon"><i class="bx bx-health"></i></div>
+                <div class="icon"><i class="fa-solid fa-kit-medical"></i></div>
                 <h4 class="title"> EMERGENCY</a></h4>
                 <p class="description">It’s okay to not be okay. If you are struggling, please don’t hesitate to reach out for help</p>
               </div>
     
               <div class="icon-box">
-                <div class="icon"><i class="bx bx-help-circle"></i></div>
+                <div class="icon"><i class="fa-solid fa-user-nurse"></i></div>
                 <h4 class="title"> SERVICES </a></h4>
                 <p class="description">Mental health services are here to help you, not judge you</p>
               </div>
@@ -73,22 +73,18 @@ We encourage you to explore our website to learn more about the services we offe
 
     </section>
 
-  
-
     <!-- ======= review  Section ======= -->
     <section id="doctors" class="doctors">
       <div class="container">
 
         <div class="section-title">
           <h1>Clients Review</h1>
-          
-        
 
         <div class="row">
 
           <div class="col-lg-6">
             <div class="member d-flex align-items-start">
-              <div class="pic"><img src="img/doctors/1.jpg" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="assets\media\1.jpg" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Rozan Aviska</h4>
                 <span>Uva Wellessa University Of Sri Lanka</span>
@@ -102,7 +98,7 @@ We encourage you to explore our website to learn more about the services we offe
 
           <div class="col-lg-6 mt-4 mt-lg-0">
             <div class="member d-flex align-items-start">
-              <div class="pic"><img src="img/doctors/2.png" class="img-fluid" alt="" ></div>
+              <div class="pic"><img src="assets\media\2.png" class="img-fluid" alt="" ></div>
               <div class="member-info">
                 <h4>Prasanna Ranadhunga</h4>
                 <span>Uva Wellessa University Of Sri Lanka</span>
@@ -116,7 +112,7 @@ We encourage you to explore our website to learn more about the services we offe
 
           <div class="col-lg-6 mt-4">
             <div class="member d-flex align-items-start">
-              <div class="pic"><img src="img/doctors/3.png" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="assets\media\3.png" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Keerthi Suresh</h4>
                 <span>Uva Wellessa University Of Sri Lanka</span>
@@ -130,7 +126,7 @@ We encourage you to explore our website to learn more about the services we offe
 
           <div class="col-lg-6 mt-4">
             <div class="member d-flex align-items-start">
-              <div class="pic"><img src="img/doctors/4.png" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="assets\media\4.png" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Naseera Banu</h4>
                 <span>Uva Wellessa University of Sri Lanka</span>
@@ -165,10 +161,6 @@ We encourage you to explore our website to learn more about the services we offe
 
   <!-- Template Main JS File -->
   <script src="js/main.js"></script>
-
-
-        
-        <div class=" " data-aos="fade-down" data-aos-delay="50"> 
     
     
     <!-- ========================= FOOTER ========================= -->

@@ -147,7 +147,7 @@
             <div class="form-outline">
                 <label class="form-label text-white" for="degree">Degree</label>
                 <select name="Degree" id="Degree" class="form-select">
-                    <option value="null">Select a Degree</option>
+                    <option>Select a Degree</option>
                     <?php
                         $select_query= "select * from degrees";
                         $result_query= mysqli_query($con, $select_query);
