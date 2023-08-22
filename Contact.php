@@ -9,7 +9,7 @@ $contactno=$_POST['contactno'];
 $gender=$_POST['gender'];
 $education=$_POST['education'];
 $address=$_POST['address'];
-$query=mysqli_query($con,"insert into contactpage(name,email,contactno,gender,education,address)
+$query=mysqli_query($con,"insert into contact(name,email,contactno,gender,education,address)
 values('$name','$email','$contactno','$gender','$education','$address')");
 if($query)
 {

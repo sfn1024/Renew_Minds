@@ -27,7 +27,7 @@
                         </a>
                         <ul class="dropdown-menu bg-clr">
                             <li><a class="dropdown-item text-warning" href="index.php?edit_degree=<?php echo $degree_id; ?>">Edit</a></li>
-                            <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                            <li><a class="dropdown-item text-danger" href="index.php?delete_degree">Delete</a></li>
                         </ul>
                     </td>
                 </tr>
