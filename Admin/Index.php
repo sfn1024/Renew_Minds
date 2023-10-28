@@ -88,10 +88,6 @@
                     </a>
                     <ul class="dropdown-menu bg-clr">
                         <li><a class="dropdown-item" href="index.php?view_appointments">View Appointments</a></li>
-                        <li><a class="dropdown-item" href="index.php?manage_mentor">Manage Mentors</a></li>
-                        <li><a class="dropdown-item" href="index.php?insert_mentor">Insert Mentors</a></li>
-                        <li><a class="dropdown-item" href="index.php?manage_degree">Manage Degrees</a></li>
-                        <li><a class="dropdown-item" href="index.php?insert_degree">Insert Degrees</a></li>
                     </ul>
                 </button>
                 <button class="btn btn-dark bg-clr"><a href="index.php?view_contact" class="nav-link text-light my-1 p-1">Contact</a></button>

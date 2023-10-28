@@ -71,6 +71,10 @@
         .submitBtn{
             margin-right: 20px;
         }
+
+        .model-content {
+            display: hidden;
+        }
     </style>
 
     <!-- ========================= APPOINMENT ========================= -->
@@ -103,7 +107,7 @@
                         <h2 class="for-title text-white">Registration Form</h2>
                         <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="card-body p-4 p-md-5">
+                    <div class="card-body p-4 md-5">
 
     <!-- ========================= FORM ========================= -->
     <form action="" method="post">
