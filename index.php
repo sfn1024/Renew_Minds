@@ -135,6 +135,7 @@
         .home-section-2 .icon-box:hover .icon i {
         color: #fff;
         }
+
     </style>
 
     <!-- ========================= INDEX ========================= -->

@@ -7,7 +7,7 @@ if(isset($_GET['delete_mentor'])){
     $result= mysqli_query($con, $delete_query);
     if($result){
         echo "<script>alert('Mentor deleted successfully')</script>";
-        echo "<script>window.open('index.php?manage_mantor','_self')</script>";
+        echo "<script>window.open('index.php?manage_mentor','_self')</script>";
     }
 }
 
