@@ -54,7 +54,6 @@
         footer {
             bottom: 0;
             width: 100%;
-
         }
         
         .nav{
@@ -64,6 +63,7 @@
         .dropdown-item{
             color: white;
         }
+
     </style>
 
 </head>
@@ -95,6 +95,33 @@
                     </ul>
                 </button>
                 <button class="btn btn-dark bg-clr"><a href="index.php?view_contact" class="nav-link text-light my-1 p-1">Contact</a></button>
+                <button class="btn btn-dark bg-clr">
+                    <a class="nav-link text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Degree
+                    </a>
+                    <ul class="dropdown-menu bg-clr">
+                        <li><a class="dropdown-item" href="index.php?manage_degree">Manage Degrees</a></li>
+                        <li><a class="dropdown-item" href="index.php?insert_degree">Insert Degrees</a></li>
+                    </ul>
+                </button>
+                <button class="btn btn-dark bg-clr">
+                    <a class="nav-link text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Mentor
+                    </a>
+                    <ul class="dropdown-menu bg-clr">
+                        <li><a class="dropdown-item" href="index.php?manage_mentor">Manage Mentors</a></li>
+                        <li><a class="dropdown-item" href="index.php?insert_mentor">Insert Mentors</a></li>
+                    </ul>
+                </button>
+                <button class="btn btn-dark bg-clr">
+                    <a class="nav-link text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Quotes
+                    </a>
+                    <ul class="dropdown-menu bg-clr">
+                        <li><a class="dropdown-item" href="index.php?manage_blog">Manage Quotes</a></li>
+                        <li><a class="dropdown-item" href="index.php?insert_blog">Insert Quotes</a></li>
+                    </ul>
+                </button>
             </div>
         </div>
     </div>
@@ -114,12 +141,20 @@
                 include('insert_degree.php');
             }
 
+            If(isset($_GET['insert_blog'])){
+                include('insert_blog.php');
+            }
+
             If(isset($_GET['manage_mentor'])){
                 include('manage_mentor.php');
             }
 
             If(isset($_GET['manage_degree'])){
                 include('manage_degree.php');
+            }
+
+            If(isset($_GET['manage_blog'])){
+                include('manage_blog.php');
             }
 
             If(isset($_GET['view_appointments'])){
@@ -136,6 +171,22 @@
 
             If(isset($_GET['edit_degree'])){
                 include('edit_degree.php');
+            }
+
+            If(isset($_GET['edit_blog'])){
+                include('edit_blog.php');
+            }
+
+            If(isset($_GET['delete_mentor'])){
+                include('delete_mentor.php');
+            }
+
+            If(isset($_GET['delete_degree'])){
+                include('delete_degree.php');
+            }
+
+            If(isset($_GET['delete_blog'])){
+                include('delete_blog.php');
             }
         ?>
     </div>

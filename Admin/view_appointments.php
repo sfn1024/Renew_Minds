@@ -23,7 +23,6 @@
         $date= $row['date'];
       $num++;
   ?>
-  
 
   <div class="dropdown d-flex justify-content-center">
     <button class="btn btn-primary bg-clr dropdown-toggle mb-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -108,7 +107,9 @@
   }
 
   .drop {
-    width: 35%;
+    width: 450px;
+    height: 200px;
+    overflow: auto;
   }
 
   td{
