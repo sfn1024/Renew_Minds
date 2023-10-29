@@ -197,7 +197,7 @@
     <footer class="text-white bg-clr">
         <div class="text-center p-3">
             © 2023 Copyright:
-            <a class="text-white" href="#">Renew Minds</a>
+            <a class="text-white" href="#">Renew_Minds</a>
         </div>
 
     </footer>
