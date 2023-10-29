@@ -17,8 +17,7 @@
         data-aos js animation sample...
         <div class=" " data-aos="fade-down" data-aos-delay="50"> 
     -->
-    <h1>testing </h1>
-
+    
     <!-- ========================= FOOTER ========================= -->
     <?php include('components/Footer.php'); ?>
 
