@@ -51,13 +51,13 @@
                     <a class="nav-link m-1" href="index.php">HOME</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link m-1" href="Appoinment.php">APPOINTMENT</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link m-1" href="About.php">ABOUT</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link m-1" href="Blog.php">BLOG</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link m-1" href="Appoinment.php">APPOINTMENT</a>
+                    <a class="nav-link m-1" href="Blog.php">QUOTES</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link m-1" href="Contact.php">CONTACT</a>

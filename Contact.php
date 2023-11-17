@@ -101,25 +101,23 @@ echo "<script>alert('Data not inserted');</script>";
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-4 text-center details" id="contact">
+                <div><p></p></div>
+                <div class="row pb-3">
+                    <h4 class="text-secondary">NOTE</h4>
+                    <p class="text-warning">Please re-check mentors availability <br> via phone before your <br> appointment time</p>
+                </div>
 
                 <div class="row pt-3 text-light">
                     <h4 class="text-secondary">CALL US</h4>
-                    <p class="text-warning"> +94 11 2140 000
-                        <br> +94 11 8547 000
-                        <br> +94 11 2140 458
+                    <p class="text-warning"> 
+                        +94 77 2140 000 <br> +94 71 2140 000 <br> +94 55 2140 000
                     </p>
                 </div>
 
                 <div class="row p-3">
                     <h4 class="text-secondary">EMAIL</h4>
-                    <p class="text-warning">contactus@durdans.com
-                        <br>businessdev@durdans.com
+                    <p class="text-warning">renewminds_offl@gmail.com <br> renewminds_buss@gmail.com
                     </p>
-                </div>
-
-                <div class="row pb-3">
-                    <h4 class="text-secondary">LOCATION</h4>
-                    <p class="text-warning">Please check specialists availability <br> prior to your arrival to the hospital</p>
                 </div>
 
             </div>
@@ -136,7 +134,7 @@ echo "<script>alert('Data not inserted');</script>";
                 <form class="p-4 mt-3" name="insert" action="" method="post">
 
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Enter your Name</label>
+                        <label for="exampleFormControlInput1" class="form-label">Full Name</label>
                         <input type="text" name="name" id="name" value=""  class="form-control" required />
                     </div>
 
@@ -146,7 +144,7 @@ echo "<script>alert('Data not inserted');</script>";
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Contact NO</label>
+                        <label for="exampleFormControlInput1" class="form-label">Contact Number</label>
                         <input type="text" name="contactno" id="contactno" value=""  class="form-control" maxlength="10" required />
                     </div>
 
@@ -181,8 +179,8 @@ echo "<script>alert('Data not inserted');</script>";
                 </form>
             </div>
         </div>
-
-        <div class="row mt-3">
+        
+        <div class="row mt-5">
             <h4>Where You Can Find Us <i class="fas fa-map-marker-alt"></i></h4>
             <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.23222197752!2d81.07370807390494!3d6.981900517668943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae4618a1a9fec37%3A0x1dd900702229654b!2sUva%20Wellassa%20University%20of%20Sri%20Lanka!5e0!3m2!1sen!2slk!4v1689189132757!5m2!1sen!2slk" width="900" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
         </div> 

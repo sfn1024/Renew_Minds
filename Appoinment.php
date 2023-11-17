@@ -260,7 +260,7 @@
 
         <!-- Submit button -->
         <button type="reset" class="btn btn-danger btn-block mx-3">Reset</button>
-        <button type="submit" name="insert_details" class="btn btn-primary btn-block mx-3">Place order</button>
+        <button type="submit" name="insert_details" class="btn btn-primary btn-block mx-3">Appoinment</button>
     </form>     
                     </div>
                 </div>

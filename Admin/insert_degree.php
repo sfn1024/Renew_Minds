@@ -1,5 +1,6 @@
 <?php
     include('../includes/connect.php');
+    
     if(isset($_POST['insert_degree'])){
         $degree_name= $_POST['Degree_Name'];
 

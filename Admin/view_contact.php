@@ -1,4 +1,3 @@
-<p>hello</p>
 <?php
   $sql = "SELECT * FROM `contact`";
   $result = $con->query($sql);

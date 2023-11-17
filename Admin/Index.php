@@ -2,14 +2,19 @@
 <?php
     include('../includes/connect.php');
     include('functions/common_functions.php');
-?>
+    session_start();
+
+    if (!isset($_SESSION['login'])) {
+        header('location:login.php');
+        exit;
+    }
+   ?>
 
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>Admin Dashboard</title>
-    <link rel="shortcut icon" href="../assets/images/SJ-logo-white.png" type="image/x-icon">
+    <title>Renew Minds Admin</title>
 
     <!-- ========================= IMPORTS ========================= -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
@@ -18,6 +23,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="assets\css\style.css">
+    <link rel="icon" type="image/x-icon" href="../assets/media/favicon.png">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css">
@@ -74,24 +80,25 @@
         <div class="container nav-cont d-flex">
             <img src="../assets/media/logo.png" class="admin-logo d-flex justify-content-start" alt="logo">
             <h3 class="text-center text-light mx-auto">Admin Dashboard</h3>
-            <div class="d-flex justify-content-start"><i class="fa-solid fa-right-from-bracket text-light"></i></div>
+            <div class="d-flex justify-content-start">
+                <a href="logout.php">
+                    <i class="fa-solid fa-right-from-bracket text-light"></i>
+                </a>
+            </div>
+
         </div>
     </nav>
     <div class="row ">
         <div class="nav col-md-12 p-3 d-flex align-items-center">
             <div class="button text-center m-auto">
                 <button class="btn btn-success bg-clr"><a href="index.php?dashboard" class="nav-link text-light my-1 p-1"><i class="fa-solid fa-home text-light"></i></a></button>
-                <button class="btn btn-dark bg-clr"><a href="index.php" class="nav-link text-light my-1 p-1">Accounts</a></button>
+
                 <button class="btn btn-dark bg-clr">
                     <a class="nav-link text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Appointment
                     </a>
                     <ul class="dropdown-menu bg-clr">
                         <li><a class="dropdown-item" href="index.php?view_appointments">View Appointments</a></li>
-                        <li><a class="dropdown-item" href="index.php?manage_mentor">Manage Mentors</a></li>
-                        <li><a class="dropdown-item" href="index.php?insert_mentor">Insert Mentors</a></li>
-                        <li><a class="dropdown-item" href="index.php?manage_degree">Manage Degrees</a></li>
-                        <li><a class="dropdown-item" href="index.php?insert_degree">Insert Degrees</a></li>
                     </ul>
                 </button>
                 <button class="btn btn-dark bg-clr"><a href="index.php?view_contact" class="nav-link text-light my-1 p-1">Contact</a></button>
@@ -197,7 +204,7 @@
     <footer class="text-white bg-clr">
         <div class="text-center p-3">
             © 2023 Copyright:
-            <a class="text-white" href="#">Renew_Minds</a>
+            <a class="text-white" href="../index.php">Renew Minds</a>
         </div>
 
     </footer>
